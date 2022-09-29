@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'shopping_cart';
+  navActive = 'recipes';
+
+  navClick(val: string){
+   this.navActive = val;
+  }
 }

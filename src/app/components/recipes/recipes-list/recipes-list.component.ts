@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Recipe } from '../recipe.model';
+import { RecipeService } from '../recipes.service';
 
 @Component({
   selector: 'app-recipes-list',
@@ -8,20 +9,17 @@ import { Recipe } from '../recipe.model';
 })
 export class RecipesListComponent implements OnInit {
 
-  recipes: Recipe[] = [
-    new Recipe("Toast", "Toast is good for health", "https://www.archanaskitchen.com/images/archanaskitchen/BasicRecipes_HOW_TO/Bread_toast_recipe.jpg"),
-    new Recipe("Dosa", "South Indian Breakfast", "https://static.toiimg.com/thumb/63841432.cms?width=1200&height=900"),
-  ];
+  recipes: Recipe[] = [];
 
-  constructor() { }
+  constructor(private recipeService : RecipeService) { }
 
   ngOnInit(): void {
+    this.recipes = this.recipeService.getRecipes();
   }
 
   deleteRecipe(evt: Recipe) {
-   console.log("evt", evt);
-   var indexOfStevie = this.recipes.findIndex(i => i.name === evt.name);
-   this.recipes.splice(indexOfStevie, 1);
+   var indexOfStevie = this.recipeService.getRecipes().findIndex(i => i.name === evt.name);
+   this.recipeService.getRecipes().splice(indexOfStevie, 1);
   }
 
 }
