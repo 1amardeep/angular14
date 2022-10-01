@@ -1,4 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -9,13 +10,17 @@ export class HeaderComponent implements OnInit {
 
   @Output() navClickEmit = new EventEmitter<string>();
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
 
   handleNav( navClick : string){
      this.navClickEmit.emit(navClick);
+  }
+
+  homePage(){
+    this.router.navigate(["/"]);
   }
 
 }

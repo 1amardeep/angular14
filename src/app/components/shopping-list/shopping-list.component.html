@@ -3,7 +3,9 @@
         <app-shopping-edit></app-shopping-edit>
     </div>
     <hr>
-    <ul class="list-group">
-        <li class="list-group-item" *ngFor="let ingredient of ingredients"> {{ ingredient.name }} ({{ ingredient.amount }})</li>
-      </ul>
+    <div style="overflow: auto; height: 65vh;">
+        <ul class="list-group">
+            <li class="list-group-item" *ngFor="let ingredient of ingredients"> {{ ingredient.name }} ({{ ingredient.amount }})</li>
+        </ul>
+    </div>
 </div>

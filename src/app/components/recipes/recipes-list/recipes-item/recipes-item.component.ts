@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Recipe } from '../../recipe.model';
-import { RecipeService } from '../../recipes.service';
 
 @Component({
   selector: 'app-recipes-item',
@@ -10,19 +10,14 @@ import { RecipeService } from '../../recipes.service';
 export class RecipesItemComponent implements OnInit {
 
   @Input() recipe : any;
-  @Output() deleteEmit = new EventEmitter<Recipe>();
 
-  constructor(private recipeService :RecipeService) { }
+  constructor(private router : Router) { }
 
   ngOnInit(): void {
   }
 
-  deleteRecipes(recipe: Recipe) {
-    this.deleteEmit.emit(recipe);
-  }
-
   recipeDetail(recipe :Recipe) {
-    this.recipeService.recipeSelected.emit(recipe);
+    this.router.navigate(['recipies/'+recipe.name]);
   }
 
 }

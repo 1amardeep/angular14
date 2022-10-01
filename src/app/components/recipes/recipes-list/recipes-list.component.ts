@@ -16,10 +16,4 @@ export class RecipesListComponent implements OnInit {
   ngOnInit(): void {
     this.recipes = this.recipeService.getRecipes();
   }
-
-  deleteRecipe(evt: Recipe) {
-   var indexOfStevie = this.recipeService.getRecipes().findIndex(i => i.name === evt.name);
-   this.recipeService.getRecipes().splice(indexOfStevie, 1);
-  }
-
 }
