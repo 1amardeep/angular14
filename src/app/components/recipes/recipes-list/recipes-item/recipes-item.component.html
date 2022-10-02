@@ -1,15 +1,17 @@
-<div class="row">
+<div class="row mt-1">
     <div class="col-md-12">
-      <div class="card">
-        <div class="card-header">
-          {{ recipe.name }}
+      <a class="card _text"     
+      routerLinkActive="active" 
+      [routerLink]="[recipe.name]">
+        <div class="d-flex card-body">
+          <div class="col-md-8">
+            <h5 class="card-title">{{ recipe.name }}</h5>
+            <p class="card-text">{{ recipe.description }}</p>
+          </div>
+          <div class="col-md-4">
+            <img [src]="recipe.imageUrl" alt="{{ recipe.name }}" width="100px">
+          </div>
         </div>
-        <div class="card-body">
-          <h5 class="card-title">{{ recipe.name }}</h5>
-          <img [src]="recipe.imageUrl" alt="{{ recipe.name }}" width="100px">
-          <p class="card-text">{{ recipe.description }}</p>
-          <button class="btn btn-primary" (click)="recipeDetail(recipe)">Details</button>
-        </div>
-      </div>
+      </a>
     </div>
   </div>

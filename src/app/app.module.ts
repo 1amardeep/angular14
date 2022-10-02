@@ -11,6 +11,8 @@ import { ShoppingListComponent } from './components/shopping-list/shopping-list.
 import { ShoppingEditComponent } from './components/shopping-list/shopping-edit/shopping-edit.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { AppRoutingModule } from './app-routing.module';
+import { RecipesStartComponent } from './components/recipes/recipes-start/recipes-start.component';
+import { RecipesEditComponent } from './components/recipes/recipes-edit/recipes-edit.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { AppRoutingModule } from './app-routing.module';
     RecipesItemComponent,
     ShoppingListComponent,
     ShoppingEditComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    RecipesStartComponent,
+    RecipesEditComponent
   ],
   imports: [
     BrowserModule,
