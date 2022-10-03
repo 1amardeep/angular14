@@ -37,4 +37,9 @@ export class RecipeService {
         this.recipes = [...this.recipes, recipe ];
         this.recipeUpdated.next(this.recipes);
     }
+
+    deleteRecipes(recipe : Recipe) {
+        this.recipes = this.recipes.filter((obj) => obj.name !== recipe.name);
+        this.recipeUpdated.next(this.recipes);
+    }
 }
